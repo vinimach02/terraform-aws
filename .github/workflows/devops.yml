@@ -14,8 +14,7 @@ jobs:
     uses: ./.github/workflows/terraform.yaml
     with:
       environment: dev
-      role-to-assume: arn:aws:iam::206256815424:role/github-actions-vinimach02-pipeline
-      # aws-assume-role-arn: "arn:aws:iam::206256815424:role/github-actions-vinimach02-pipeline"
+      aws-assume-role-arn: "arn:aws:iam::206256815424:role/github-actions-vinimach02-pipeline"
       aws-region: "sa-east-1"
       aws-statefile-s3-bucket: "vinimach02-sa-east-1-tf-statefile"
       aws-lock-dynamodb-table: "vinimach02-sa-east-1-tf-lock"
