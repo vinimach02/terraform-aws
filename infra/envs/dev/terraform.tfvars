@@ -1,1 +1,1 @@
-bucket_name="dev-sa-east-1-build-mach"
+bucket_name="dev-us-east-2-build-mach"

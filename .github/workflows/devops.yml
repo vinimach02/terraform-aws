@@ -15,6 +15,6 @@ jobs:
     with:
       environment: dev
       aws-assume-role-arn: "arn:aws:iam::206256815424:role/github-action-pipeline"
-      aws-region: "sa-east-1"
+      aws-region: "us-east-2"
       aws-statefile-s3-bucket: "vinimach02-sa-east-1-tf-statefile"
       aws-lock-dynamodb-table: "vinimach02-sa-east-1-tf-lock"

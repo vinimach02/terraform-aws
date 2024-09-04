@@ -1,1 +1,1 @@
-bucket_name="prod-sa-east-1-build-mach"
+bucket_name="prod-us-east-2-build-mach"
