@@ -1,0 +1,36 @@
+name: Pipeline Deploy para Servidor Linux
+
+on:
+  push:
+    branches:
+      - main  # Quando fizer push na branch main
+
+jobs:
+  build-and-deploy:
+    runs-on: [self-hosted, linux]  # Usa seu runner próprio
+
+    steps:
+    - name: Checkout do código
+      uses: actions/checkout@v4
+
+    - name: Instalar dependências (opcional)
+      run: |
+        echo "Instalando dependências..."
+        # Exemplo: npm install, pip install -r requirements.txt
+        # cd app && npm install
+
+    - name: Rodar testes (opcional)
+      run: |
+        echo "Executando testes..."
+        # Exemplo: npm test, pytest tests/
+        # pytest
+
+    - name: Deploy para o servidor
+      run: |
+        ssh github@172.16.1.53 << 'EOF'
+          cd /github_actions/terraform-aws
+          git reset --hard HEAD
+          git pull origin main
+          # Exemplo: Restartar o serviço se for necessário
+          # sudo systemctl restart meu-servico
+        EOF
